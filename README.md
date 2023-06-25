@@ -1,5 +1,30 @@
-# Welcome to GitHub Desktop!
+Here's the solution to the "Move Zeroes" problem in JavaScript:/**
+ * Moves all zeroes to the end of the array while maintaining the relative order of non-zero elements.
+ * @param {number[]} nums - The input array of integers.
+ */
+function moveZeroes(nums) {
+  let insertIndex = 0;
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+  // Move all non-zero elements to the beginning of the array
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[insertIndex] = nums[i];
+      insertIndex++;
+    }
+  }
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+  // Fill the remaining positions with zeroes
+  for (let i = insertIndex; i < nums.length; i++) {
+    nums[i] = 0;
+  }
+}
+
+// Test cases
+const nums1 = [0, 1, 0, 3, 12];
+moveZeroes(nums1);
+console.log(nums1); // Output: [1, 3, 12, 0, 0]
+
+const nums2 = [0];
+moveZeroes(nums2);
+console.log(nums2); // Output: [0]
+
