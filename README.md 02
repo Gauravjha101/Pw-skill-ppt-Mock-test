@@ -1,4 +1,4 @@
-Here's the solution to the "First Unique Character in a String" problem in JavaScript:
+ Here's the solution to the "First Unique Character in a String" problem in JavaScript:
 /**
  * Finds the index of the first non-repeating character in a string.
  * @param {string} s - The input string.
