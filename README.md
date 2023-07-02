@@ -1,32 +1,3 @@
-
-
-You have no unread notifications
-Code
-Issues
-1
-Pull requests
-1
-Actions
-Projects
-Security
-Insights
-Settings
-Jump to bottom
-Web development Mock Test 1 #3
-Open
-Gauravjha101 opened this issue 9 hours ago · 1 comment
-Open
-Web development Mock Test 1
-#3
-Gauravjha101 opened this issue 9 hours ago · 1 comment
-Comments
-Gauravjha101 commented 9 hours ago
-#2
-
-@Gauravjha101 Gauravjha101 changed the title PPT Mock test PPT Mock test 2 9 hours ago
-Gauravjha101 commented 9 hours ago • 
-#2
-
 💡 A1) Sure! Here are the explanations and code examples for each CSS position:
 
 Static:
