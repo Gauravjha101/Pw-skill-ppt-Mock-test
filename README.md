@@ -1,5 +1,3 @@
-Here's the solution to the "Move Zeroes" problem in JavaScript:/**
- * Moves all zeroes to the end of the array while maintaining the relative order of non-zero elements.
  * @param {number[]} nums - The input array of integers.
  */
 function moveZeroes(nums) {
