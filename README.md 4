@@ -1,0 +1,37 @@
+Sure! Here's an example of how you can achieve that using JavaScript and CSS:
+
+HTML:
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Example</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+JavaScript (script.js):
+
+document.addEventListener('DOMContentLoaded', function() {
+  const box = document.querySelector('.box');
+
+  box.addEventListener('click', function() {
+    box.style.backgroundColor = 'yellow';
+    box.style.width = '600px';
+    box.style.height = '600px';
+  });
+});
+In this example, we start by defining a box element with a class name of "box" in the HTML. The CSS styles the box with a red background and a size of 300x300 pixels.
+
+In the JavaScript code, we use the querySelector method to select the box element and assign it to the box variable. We then attach a click event listener to the box using the addEventListener method. When the box is clicked, the event listener function is triggered. Inside the function, we change the background color to yellow using the style.backgroundColor property, and we double the width and height of the box by setting the style.width and style.height properties to '600px'.
+
+When you open this HTML file in a web browser and click the red box, it will change its color to yellow and double its size to 600x600 pixels.
