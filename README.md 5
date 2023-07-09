@@ -2,8 +2,6 @@ Sure! Here's an example of how you can create an app with an input box that adds
 
 HTML:
 
-html
-Copy code
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +20,6 @@ Copy code
 </html>
 JavaScript (script.js):
 
-javascript
-Copy code
 document.addEventListener('DOMContentLoaded', function() {
   const textInput = document.getElementById('textInput');
   const submitButton = document.getElementById('submitButton');
@@ -46,6 +42,6 @@ In the JavaScript code, we use the getElementById method to select the input box
 
 Inside the event listener function, we retrieve the value of the text input using the value property of the textInput element. We check if the trimmed value is not empty to prevent adding empty items to the list. If the text is not empty, we create a new list item (<li>) using the createElement method, set its text content to the input text, and append it to the outputList element using the appendChild method. Finally, we clear the input box by setting its value to an empty string (textInput.value = '').
 
-When you open this HTML file in a web browser, you can enter some text in the input box and click the submit button to add the text as a new item in the unordered list below the input box
+When you open this HTML file in a web browser, you can enter some text in the input box and click the submit button to add the text as a new item in the unordered list below the input box.
 
 
