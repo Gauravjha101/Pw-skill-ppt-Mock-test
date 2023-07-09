@@ -24,9 +24,8 @@ HTML:
   <script src="script.js"></script>
 </body>
 </html>
-JavaScript (script.js):
 
-javascript:
+JavaScript (script.js):
 
 document.addEventListener('DOMContentLoaded', function() {
   const dataContainer = document.getElementById('dataContainer');
