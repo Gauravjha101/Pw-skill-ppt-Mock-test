@@ -1,0 +1,116 @@
+Sure! I can help you with that. Here's an example of a responsive navbar using HTML, CSS, and JavaScript. It will display a hamburger menu on smaller screens and reveal the menu items when clicked, while on larger screens, the menu items will be displayed directly.
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand">
+        <a href="#">Logo</a>
+      </div>
+      <div class="menu-icon">
+        <span class="icon"></span>
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+CSS (styles.css):
+
+.navbar {
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.icon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .responsive {
+    display: block;
+  }
+
+  .responsive li {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+JavaScript (script.js):
+
+document.querySelector('.menu-icon').addEventListener('click', function() {
+  var menu = document.querySelector('.menu');
+  if (menu.style.display === 'flex') {
+    menu.style.display = 'none';
+  } else {
+    menu.style.display = 'flex';
+  }
+});
+This code creates a basic navbar with a logo and menu items. The CSS includes media queries to handle responsive behavior. On smaller screens (max-width: 768px), the menu items are hidden and the hamburger menu icon is displayed. When the icon is clicked, the menu items are toggled between display: none and display: flex.
+
+You can save the HTML, CSS, and JavaScript code in separate files (e.g., index.html, styles.css, script.js) and open the HTML file in a web browser to see the responsive navbar in action. Feel free to modify the styles and content to fit your needs.
+
+
+
+
