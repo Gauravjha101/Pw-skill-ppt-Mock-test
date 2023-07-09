@@ -2,8 +2,6 @@ Certainly! Here's an example of how you can fetch data from the JSONPlaceholder 
 
 HTML:
 
-html
-Copy code
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +26,8 @@ Copy code
 </html>
 JavaScript (script.js):
 
-javascript
-Copy code
+javascript:
+
 document.addEventListener('DOMContentLoaded', function() {
   const dataContainer = document.getElementById('dataContainer');
 
