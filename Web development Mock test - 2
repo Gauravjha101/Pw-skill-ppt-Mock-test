@@ -37,3 +37,51 @@ In this example, we start by defining a box element with a class name of "box" i
 In the JavaScript code, we use the querySelector method to select the box element and assign it to the box variable. We then attach a click event listener to the box using the addEventListener method. When the box is clicked, the event listener function is triggered. Inside the function, we change the background color to yellow using the style.backgroundColor property, and we double the width and height of the box by setting the style.width and style.height properties to '600px'.
 
 When you open this HTML file in a web browser and click the red box, it will change its color to yellow and double its size to 600x600 pixels.
+
+💡  Q2  Create a app where you have an input box and whenever a user types something in the input box and hits submit it should be added on the webpage below the input box
+
+ANS:-Sure! Here's an example of how you can create an app with an input box that adds the user's input to the webpage:
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Box App</title>
+</head>
+<body>
+  <h1>Input Box App</h1>
+
+  <input type="text" id="textInput" placeholder="Enter text">
+  <button id="submitButton">Submit</button>
+
+  <ul id="outputList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
+JavaScript (script.js):
+
+document.addEventListener('DOMContentLoaded', function() {
+  const textInput = document.getElementById('textInput');
+  const submitButton = document.getElementById('submitButton');
+  const outputList = document.getElementById('outputList');
+
+  submitButton.addEventListener('click', function() {
+    const text = textInput.value;
+    if (text.trim() !== '') {
+      const listItem = document.createElement('li');
+      listItem.textContent = text;
+      outputList.appendChild(listItem);
+      textInput.value = '';
+    }
+});
+});
+
+In this example, we have an input box (<input type="text">) where the user can enter some text, and a submit button (<button>) to trigger the addition of the input text to the webpage.
+
+In the JavaScript code, we use the getElementById method to select the input box, submit button, and the unordered list (<ul>) where we will add the user's input. We then attach a click event listener to the submit button using the addEventListener method. When the button is clicked, the event listener function is triggered.
+
+Inside the event listener function, we retrieve the value of the text input using the value property of the textInput element. We check if the trimmed value is not empty to prevent adding empty items to the list. If the text is not empty, we create a new list item (<li>) using the createElement method, set its text content to the input text, and append it to the outputList element using the appendChild method. Finally, we clear the input box by setting its value to an empty string (textInput.value = '').
+
+When you open this HTML file in a web browser, you can enter some text in the input box and click the submit button to add the text as a new item in the unordered list below the input box.
