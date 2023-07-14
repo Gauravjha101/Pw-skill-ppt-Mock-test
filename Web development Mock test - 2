@@ -279,3 +279,195 @@ document.querySelector('.menu-icon').addEventListener('click', function() {
 This code creates a basic navbar with a logo and menu items. The CSS includes media queries to handle responsive behavior. On smaller screens (max-width: 768px), the menu items are hidden and the hamburger menu icon is displayed. When the icon is clicked, the menu items are toggled between display: none and display: flex.
 
 You can save the HTML, CSS, and JavaScript code in separate files (e.g., index.html, styles.css, script.js) and open the HTML file in a web browser to see the responsive navbar in action. Feel free to modify the styles and content to fit your needs.
+
+💡  Q5  Create a form with proper form validation using JavaScript (name, email, phone number, password, age, gender, date, color picker)
+
+
+ANS:- Certainly! Here's an example of a form with proper form validation using JavaScript. It includes fields for name, email, phone number, password, age, gender, date, and a color picker.
+
+HTML:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <form id="myForm" onsubmit="validateForm(event)">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18" max="99" required>
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <div>
+      <label for="color">Color:</label>
+      <input type="color" id="color" name="color" required>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+CSS (styles.css):
+
+.error {
+  color: red;
+}
+
+JavaScript (script.js):
+
+function validateForm(event) {
+  event.preventDefault();
+
+  // Reset error messages
+  clearErrors();
+
+  // Validate each field
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var phoneInput = document.getElementById('phone');
+  var passwordInput = document.getElementById('password');
+  var ageInput = document.getElementById('age');
+  var genderInput = document.getElementById('gender');
+  var dateInput = document.getElementById('date');
+  var colorInput = document.getElementById('color');
+
+  var isValid = true;
+
+  if (!validateName(nameInput.value)) {
+    displayError(nameInput, 'Please enter a valid name.');
+    isValid = false;
+  }
+
+  if (!validateEmail(emailInput.value)) {
+    displayError(emailInput, 'Please enter a valid email address.');
+    isValid = false;
+  }
+
+  if (!validatePhone(phoneInput.value)) {
+    displayError(phoneInput, 'Please enter a valid phone number.');
+    isValid = false;
+  }
+
+  if (!validatePassword(passwordInput.value)) {
+    displayError(passwordInput, 'Please enter a valid password (minimum 8 characters).');
+    isValid = false;
+  }
+
+  if (!validateAge(ageInput.value)) {
+    displayError(ageInput, 'Please enter a valid age (between 18 and 99).');
+    isValid = false;
+  }
+
+  if (!validateGender(genderInput.value)) {
+    displayError(genderInput, 'Please select a gender.');
+    isValid = false;
+  }
+
+  if (!validateDate(dateInput.value)) {
+    displayError(dateInput, 'Please enter a valid date.');
+    isValid = false;
+  }
+
+  if (!validateColor(colorInput.value)) {
+    displayError(colorInput, 'Please select a valid color.');
+    isValid = false;
+  }
+
+  if (isValid) {
+    // Form is valid, you can submit the form here or perform additional actions
+    alert('Form submitted successfully!');
+    document.getElementById('myForm').reset(); // Reset the form after submission
+  }
+}
+
+function validateName(name) {
+  // Basic name validation (non-empty)
+  return name.trim() !== '';
+}
+
+function validateEmail(email) {
+  // Email validation using a regular expression
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+
+function validatePhone(phone) {
+  // Phone number validation using a regular expression
+  var phonePattern = /^\d{10}$/;
+  return phonePattern.test(phone);
+}
+
+function validatePassword(password) {
+  // Password validation (minimum 8 characters)
+  return password.length >= 8;
+}
+
+function validateAge(age) {
+  // Age validation (between 18 and 99)
+  var ageNumber = parseInt(age, 10);
+  return ageNumber >= 18 && ageNumber <= 99;
+}
+
+function validateGender(gender) {
+  // Gender validation (non-empty)
+  return gender.trim() !== '';
+}
+
+function validateDate(date) {
+  // Date validation (non-empty)
+  return date.trim() !== '';
+}
+
+function validateColor(color) {
+  // Color validation (non-empty)
+  return color.trim() !== '';
+}
+
+function displayError(inputElement, message) {
+  // Display the error message below the input field
+  var errorElement = document.createElement('div');
+  errorElement.className = 'error';
+  errorElement.innerText = message;
+  inputElement.parentNode.insertBefore(errorElement, inputElement.nextSibling);
+}
+
+function clearErrors() {
+  // Remove all error messages
+  var errorElements = document.getElementsByClassName('error');
+  while (errorElements.length > 0) {
+    errorElements[0].parentNode.removeChild(errorElements[0]);
+  }
+}
+This code creates a form with various input fields and performs validation on each field when the form is submitted. The JavaScript code includes functions to validate the name, email, phone number, password, age, gender, date, and color fields. Error messages are displayed for invalid inputs, and the form is reset after successful submission.
+
+Save the HTML, CSS, and JavaScript code in separate files (e.g., index.html, styles.css, script.js), and open the HTML file in a web browser to see the form with validation in action. Feel free to modify the styles and validation rules to suit your needs.
