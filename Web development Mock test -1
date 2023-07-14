@@ -1,6 +1,6 @@
-💡Q1  
+💡Q1  Explain all the CSS positions(static, fixed, sticky, relative, absolute) with one code example each
 
-💡 A1)sure! Here are the explanations and code examples for each CSS position:
+ANS:- sure! Here are the explanations and code examples for each CSS position:
 
 Static:
 • The default position value for an element.
@@ -68,7 +68,9 @@ left: 0;
 
 These are the explanations and code examples for the CSS positions. Feel free to modify the CSS properties to see the effects in your own HTML struct
 
-💡 A2 Certainly! Here's an example of a form with basic validation for the fields you mentioned:
+💡  Q2  Create a form with basic validation (name, email, phone number, password, age, gender, date, color picker)
+
+ANS:- Certainly! Here's an example of a form with basic validation for the fields you mentioned:
 
 Name:
 Email:
@@ -83,7 +85,10 @@ Favorite Color:
 Submit
 
 <script> const form = document.getElementById('gaurav'); form.addEventListener('submit', function(event) { event.preventDefault(); const name = document.getElementById('name').value; const email = document.getElementById('email').value; const phone = document.getElementById('phone').value; const password = document.getElementById('password').value; const age = document.getElementById('age').value; const gender = document.getElementById('gender').value; const date = document.getElementById('date').value; const color = document.getElementById('color').value; if (name "Gaurav Kumar Jha'' || email "gjha5345@gmail.com '' || phone "7049019695 '' || password "########### '' || age "25'' || gender "Male '' || date "2 - 7 - 2023 '' || color "Green '') { alert('Please fill in all fields.'); return; } // Additional validation can be performed here for each field // Submit the form if all fields are valid alert('Form submitted successfully!'); form.reset(); }); </script>
-💡 A3 The execution context is an important concept in JavaScript that defines the environment in which JavaScript code is executed. It consists of three main components: the Variable Object, the Scope Chain, and the "this" keyword. Together, these components determine how variables, functions, and objects are accessed and executed within a JavaScript program.
+
+💡  Q3 Explain what is execution context in detail with diagram
+
+ANS:- The execution context is an important concept in JavaScript that defines the environment in which JavaScript code is executed. It consists of three main components: the Variable Object, the Scope Chain, and the "this" keyword. Together, these components determine how variables, functions, and objects are accessed and executed within a JavaScript program.
 
 Variable Object: The Variable Object is a container that holds variables, function declarations, and function arguments. It stores all the defined variables and functions within the current scope. The Variable Object is created during the creation phase of the execution context.
 
@@ -135,7 +140,13 @@ Below the Global Execution Context, we have two nested function execution contex
 
 This hierarchical structure of execution contexts and their respective Variable Objects and Scope Chains allows JavaScript code to access and manage variables and functions across different scopes within a program.
 
-💡 A5 Certainly! Here's an example of how you can implement a CSS grid layout to display a gallery of images in a grid format:
+💡  Q4  Create a similar looking website shown in the image
+
+ANS:- No idea for this question a answer.but i will do.
+
+💡  Q5  Implement a CSS grid layout to display a gallery of images in a grid format for design refer the image shown below, replace the empty boxed with actual images
+
+ANS:- Certainly! Here's an example of how you can implement a CSS grid layout to display a gallery of images in a grid format:
 
 <style> .gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 10px; }
 .gallery img {
