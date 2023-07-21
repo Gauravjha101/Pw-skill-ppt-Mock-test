@@ -1,0 +1,188 @@
+ASSIGNMENT
+QUESTION 3
+
+💡    A1  class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        
+        nums.sort()
+        
+        
+        result = float('inf')
+        stored_sum = 0
+        
+        for i in range(len(nums) - 2):
+            
+            left = i + 1
+            right = len(nums) - 1
+            
+            while left < right:
+                
+                k = nums[i] + nums[left] + nums[right]
+                
+                if k > target:
+                    right -= 1
+                elif k < target:
+                    left += 1
+                else:
+                    return k
+                
+                if abs(target - k) < result:
+                    result = abs(target - k)
+                    stored_sum = k
+                
+        return stored_sum
+      
+💡    A2  class Solution:
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+	
+        def kSum(nums: List[int], target: int, k: int) -> List[List[int]]:
+            res = []
+            
+            # If we have run out of numbers to add, return res.
+            if not nums:
+                return res
+            
+            # There are k remaining values to add to the sum. The 
+            # average of these values is at least target // k.
+            average_value = target // k
+            
+            # We cannot obtain a sum of target if the smallest value
+            # in nums is greater than target // k or if the largest 
+            # value in nums is smaller than target // k.
+            if average_value < nums[0] or nums[-1] < average_value:
+                return res
+            
+            if k == 2:
+                return twoSum(nums, target)
+    
+            for i in range(len(nums)):
+                if i == 0 or nums[i - 1] != nums[i]:
+                    for subset in kSum(nums[i + 1:], target - nums[i], k - 1):
+                        res.append([nums[i]] + subset)
+    
+            return res
+
+        def twoSum(nums: List[int], target: int) -> List[List[int]]:
+            res = []
+            lo, hi = 0, len(nums) - 1
+    
+            while (lo < hi):
+                curr_sum = nums[lo] + nums[hi]
+                if curr_sum < target or (lo > 0 and nums[lo] == nums[lo - 1]):
+                    lo += 1
+                elif curr_sum > target or (hi < len(nums) - 1 and nums[hi] == nums[hi + 1]):
+                    hi -= 1
+                else:
+                    res.append([nums[lo], nums[hi]])
+                    lo += 1
+                    hi -= 1
+                                                         
+            return res
+
+        nums.sort()
+        return kSum(nums, target, 4)
+
+💡    A3  class Solution {
+     void nextPermutation(int[] nums) {
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i + 1] <= nums[i]) {
+            i--;
+        }
+        if (i >= 0) {
+            int j = nums.length - 1;
+            while (nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        reverse(nums, i + 1);
+    }
+
+    private void reverse(int[] nums, int start) {
+        int i = start, j = nums.length - 1;
+        while (i < j) {
+            swap(nums, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+💡    A4  class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left,right=0,len(nums)-1
+        while left<=right:
+            mid=(left+right)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]<target:
+                left=mid+1
+            else:
+                right=mid-1
+        return left
+
+💡    A5  class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+      integer = 0
+      for i in digits:
+        integer = integer*10 + i
+      integer += 1
+      res = []
+      while integer != 0:
+        res.insert(0, integer % 10)
+        integer = integer//10
+      return res
+
+
+💡    A6  class Solution(object):
+    def singleNumber(self, nums):
+        # Initialize the unique number...
+        uniqNum = 0;
+        # TRaverse all elements through the loop...
+        for idx in nums:
+            # Concept of XOR...
+            uniqNum ^= idx;
+        return uniqName;       # Return the unique number…
+
+💡    A7  class Solution:
+    def findMissingRanges(self, nums: List[int], lower: int, upper: int) -> List[str]:
+        def f(a, b):
+            return str(a) if a == b else f'{a}->{b}'
+
+        n = len(nums)
+        if n == 0:
+            return [f(lower, upper)]
+        ans = []
+        if nums[0] > lower:
+            ans.append(f(lower, nums[0] - 1))
+        for a, b in pairwise(nums):
+            if b - a > 1:
+                ans.append(f(a + 1, b - 1))
+        if nums[-1] < upper:
+            ans.append(f(nums[-1] + 1, upper))
+        return ans
+
+💡    A8  class Solution {
+     public boolean canAttendMeetings(int[][] intervals) {
+         int len = intervals.length;
+         int[] startTime = new int[len];
+         int[] endTime = new int[len];
+         int count = 0;
+         for(int[] interval: intervals){
+             startTime[count] = interval[0];
+             endTime[count++] = interval[1];
+         }
+         Arrays.sort(startTime);
+         Arrays.sort(endTime);
+         for(int i = 1; i < len; i++){
+             if(startTime[i] < endTime[i - 1]) return false;
+         }
+         return true;
+     }
+ }
